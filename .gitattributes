@@ -11,3 +11,83 @@ class Math:
         return x * y
 
 
+
+    def divide(self, x, y):
+        return x / y
+
+    def exponentiate(self, x, y):
+        return x ** y
+
+class Physics:
+    def distance(self, velocity, time):
+        return velocity * time
+
+    def velocity(self, distance, time):
+        return distance / time
+
+    def time(self, distance, velocity):
+        return distance / velocity
+
+    def acceleration(self, velocity_final, velocity_initial, time):
+        return (velocity_final - velocity_initial) / time
+
+    def force(self, mass, acceleration):
+        return mass * acceleration
+selection = input("Enter 'math' or 'physics' to select a subject: ")
+
+# Create an instance of the appropriate class based on user selection
+if selection == "math":
+    subject = Math()
+elif selection == "physics":
+    subject = Physics()
+else:
+    print("Invalid selection.")
+    exit()
+
+# Ask user to select an operation
+operation = input("Enter the operation you wish to perform: ")
+
+
+if operation == "add":
+    x = float(input("Enter the first number: "))
+    y = float(input("Enter the second number: "))
+    result = subject.add(x, y)
+elif operation == "subtract":
+    x = float(input("Enter the first number: "))
+    y = float(input("Enter the second number: "))
+    result = subject.subtract(x, y)
+elif operation == "multiply":
+    x = float(input("Enter the first number: "))
+    y = float(input("Enter the second number: "))
+    result = subject.multiply(x, y)
+elif operation == "divide":
+    x = float(input("Enter the first number: "))
+    y = float(input("Enter the second number: "))
+    result = subject.divide(x, y)
+elif operation == "exponentiate":
+    x = float(input("Enter the base number: "))
+    y = float(input("Enter the exponent: "))
+    result = subject.exponentiate(x, y)
+elif operation == "distance":
+    velocity = float(input("Enter the velocity: "))
+    time = float(input("Enter the time: "))
+    result = subject.distance(velocity, time)
+elif operation == "velocity":
+    distance = float(input("Enter the distance: "))
+    time = float(input("Enter the time: "))
+    result = subject.velocity(distance, time)
+elif operation == "time":
+    distance = float(input("Enter the distance: "))
+    velocity = float(input("Enter the velocity: "))
+    result = subject.time(distance, velocity)
+elif operation == "acceleration":
+    velocity_initial = float(input("Enter the initial velocity: "))
+    velocity_final = float(input("Enter the final velocity: "))
+    time = float(input("Enter the time: "))
+    result = subject.acceleration(velocity_final, velocity_initial, time)
+elif operation == "force":
+    mass = float(input("Enter the mass: "))
+    acceleration = float(input("Enter the acceleration: "))
+    result = subject.force(mass, acceleration)
+else:
+    print("Invalid selection")
