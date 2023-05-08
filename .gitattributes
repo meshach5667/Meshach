@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+class Math:
+    def add(self, x, y):
+        return x + y
+
+ 
